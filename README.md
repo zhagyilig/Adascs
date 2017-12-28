@@ -1,5 +1,5 @@
-# [scripts](http://xtrdb.net)
-### :seedling:工作中的一些脚本:palm_tree:
+# [Every minute costs a life](http://xtrdb.net)
+### :seedling:工作中写的一些些脚本:palm_tree:
 
 ### 进度表 <a name="progress">&nbsp;</a>
 
