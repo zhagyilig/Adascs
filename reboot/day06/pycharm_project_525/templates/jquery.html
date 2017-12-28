@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Stu | Jquery</title>
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <style type="text/css">
+        #content{
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div id="alertbox" class="alert alert-danger" role="alert">今天天气不错</div>
+    <button id="btn1" class="btn btn-success">按钮</button>
+
+    <script src="/static/js/jquery.js"></script>
+
+    <form id="form1" action="https://www.baidu.com/">
+        <input id="search1" type="text" name="tn">
+        <input type="submit" value="查询">
+    </form>
+
+    <div id="content" class="alert alert-success"></div>
+    <input type="text" id="content">
+    <script type="text/javascript">
+        {#$('#alertbox').hide(3000).show(3000).html('hehe')#}
+        $('#alertbox').show()
+        $('#btn1').on('click',function () {
+            $('#alertbox').html('<input type="text">').hide(5000)
+        })
+
+        $('#form1').on('submit',function() {
+            if ($('#search1').val() == '51reboot'){}
+        })
+
+    </script>
+
+</body>
+</html>
