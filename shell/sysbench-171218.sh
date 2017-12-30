@@ -32,10 +32,10 @@ LUADIR="/usr/local/share/sysbench"
 exec 3>&1 4>&2 1>> sysbench.log 2>&1
 
 # 连接数据库信息:
-DBIP=116.196.110.16
+DBIP=xxxxxxxxxxx
 DBPORT=9036
 DBUSER='zyl'
-DBPASSWD='g`QnpqD)P>}25B`^l1h)8[|(6<P;'
+DBPASSWD='xxxxxxxxxxxx'
 DBNAME="sbtest"  # 压测指定的数据库
 
 NOW=`date +'%Y%m%d%H%M'`
