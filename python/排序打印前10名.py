@@ -27,3 +27,5 @@ for i in range(10):
 
 for index,r in enumerate(res_list[-10:]):
     print("%s. char %s count is %s"%(index,r[0],r[1]))
+
+    
