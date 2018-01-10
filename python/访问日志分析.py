@@ -41,4 +41,4 @@ for (ip,status),count in res_list[-10:]:
 html_str += '</table>'
 
 with open("res.html","w") as  html_f:
-    html_f.write(html_str)
+    html_f.write(html_str)  
