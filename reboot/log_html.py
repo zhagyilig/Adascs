@@ -51,5 +51,6 @@ html_str += """
             </html>"""
 
 with open("res.html","w") as  html_f:
-    html_f.write(html_str)
+    html_f.write(html_str)  
+    
 
