@@ -1,3 +1,4 @@
+# 在整pxc的一些总结
 #官网文章:
 限制：
 https://www.percona.com/doc/percona-xtradb-cluster/LATEST/limitation.html
