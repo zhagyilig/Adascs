@@ -1,0 +1,29 @@
+1.启动报错：
+[root@pxc2 mysql3306]#  /etc/init.d/mysql start
+ ERROR! MySQL (Percona XtraDB Cluster) is not running, but lock file (/var/lock/subsys/mysql) exists
+Initializing MySQL database:                               [  OK  ]
+Starting MySQL (Percona XtraDB Cluster)....State transfer in progress, setting sleep higher
+..../usr/bin/mysqld_safe: line 218: 15064 Aborted                 nohup /usr/sbin/mysqld --basedir=/usr --datadir=/data/mysql/mysql3306/data --plugin-dir=/usr/lib64/mysql/plugin --user=mysql --wsrep-provider=/usr/lib64/galera3/libgalera_smm.so --log-error=/data/mysql/mysql3306/data/error.log --open-files-limit=65535 --pid-file=/data/mysql/mysql3306/data/mysql.pid --socket=/tmp/mysql.sock --port=3306 --wsrep_start_position='00000000-0000-0000-0000-000000000000:-1' < /dev/null > /dev/null 2>&1
+ERROR! The server quit without updating PID file (/data/mysql/mysql3306/data/mysql.pid).
+ERROR! MySQL (Percona XtraDB Cluster) server startup failed!
+
+
+error.log报错日志:
+2018-01-15T02:36:22.049644Z 1 [Note] WSREP: Prepared SST/IST request: xtrabackup-v2|192.168.21.130:4444/xtrabackup_sst//1
+
+2018-01-15T02:36:20.683535Z 0 [Note] WSREP: Shifting OPEN -> PRIMARY (TO: 7)
+2018-01-15T02:36:59.166550Z 0 [ERROR] WSREP: gcs/src/gcs_group.cpp:gcs_group_handle_join_msg():765: Will never receive state. Need to abort.
+## 这里报错显示无法加入
+## 解决:
+卧槽: 我的是防火墙没关,关闭即可，或者网友:把配置文件中wsrep_node_address参数改正确(http://blog.csdn.net/eviswang/article/details/77747343)
+
+
+2.二进制安装始终报错
+2018-01-14T07:08:53.416460Z 0 [Note] WSREP: Initiating SST/IST transfer on JOINER side (wsrep_sst_xtrabackup-v2 --role 'joiner' --address '192.168.21.161' --datadir '/data/mysql/mysql3306/data/' --defaults-file '/etc/my.cnf' --defaults-group-suffix '' --parent '7802'  '' )
+sh: wsrep_sst_xtrabackup-v2: command not found
+2018-01-14T07:08:53.420934Z 0 [ERROR] WSREP: Failed to read 'ready <addr>' from: wsrep_sst_xtrabackup-v2 --role 'joiner' --address '192.168.21.161' --datadir '/data/mysql/mysql3306/data/' --defaults-file '/etc/my.cnf' --defaults-group-suffix '' --parent '7802'  '' 
+	Read: '(null)'
+2018-01-14T07:08:53.421005Z 0 [ERROR] WSREP: Process completed with error: wsrep_sst_xtrabackup-v2 --role 'joiner' --address '192.168.21.161' --datadir '/data/mysql/mysql3306/data/' --defaults-file '/etc/my.cnf' --defaults-group-suffix '' --parent '7802'  '' : 2 (No such file or directory)
+2018-01-14T07:08:53.421084Z 1 [ERROR] WSREP: Failed to prepare for 'xtrabackup-v2' SST. Unrecoverable.
+2018-01-14T07:08:53.421104Z 1 [ERROR] Aborting
+## 还没搞定
