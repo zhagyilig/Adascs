@@ -27,3 +27,27 @@ sh: wsrep_sst_xtrabackup-v2: command not found
 2018-01-14T07:08:53.421084Z 1 [ERROR] WSREP: Failed to prepare for 'xtrabackup-v2' SST. Unrecoverable.
 2018-01-14T07:08:53.421104Z 1 [ERROR] Aborting
 ## 还没搞定
+
+3.在5.7版本之后，如果节点不是最后关闭，启动会报错:
+2018-01-15T14:56:22.217678Z 0 [ERROR] WSREP: It may not be safe to bootstrap the cluster from this node. It was not the last one to leave the cluster
+ and may not contain all the updates. To force cluster bootstrap with this node, edit the grastate.dat file manually and set safe_to_bootstrap to 1 .
+2018-01-15T14:56:22.217703Z 0 [ERROR] WSREP: Provider/Node (gcomm://192.168.21.161,192.168.21.130,192.168.21.139) failed to establish connection with
+ cluster (reason: 7)
+2018-01-15T14:56:22.217786Z 0 [ERROR] Aborting
+
+## 解决：
+日志中提到"It was not the last one to leave the cluster
+ and may not contain all the updates. To force cluster bootstrap with this node, edit the grastate.dat file manually and set safe_to_bootstrap to 1 .",手动将grastate.dat的safe_to_bootstrap设置成1;
+ [root@pxc3 data]# pwd
+/data/mysql/mysql3306/data
+[root@pxc3 data]#  cat grastate.dat 
+# GALERA saved state
+version: 2.1
+uuid:    86e1c4d2-fa08-11e7-9b66-0a2ec3c2de03
+seqno:   -1
+safe_to_bootstrap: 0 # 设置成1
+
+4.pxc启动建议
+用mysqld启动
+第一个节点:  /usr/sbin/mysqld --defaults-file=/etc/my.cnf --wsrep-new-cluster &
+其他节点:    /usr/sbin/mysqld --defaults-file=/etc/my.cnf &
