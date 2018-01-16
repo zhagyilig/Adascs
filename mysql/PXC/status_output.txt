@@ -43,10 +43,10 @@ mysql> show global status like '%wsrep%';
 +----------------------------------+-----------------------------------------+
 | wsrep_local_state_uuid           | 429c872c-f928-11e7-8b55-fa55387054a1    |
 | wsrep_protocol_version           | 7                                       |
-| wsrep_last_committed             | 8                                       |
-| wsrep_replicated                 | 8                                       |
-| wsrep_replicated_bytes           | 1833                                    |
-| wsrep_repl_keys                  | 8                                       |
+| wsrep_last_committed             | 8                                       |表示当前节点最新提交的事务号,也是最新的Galera GTID的后半部分
+| wsrep_replicated                 | 8                                       |当前节点已经复制过的事务数量,只代表当前节点写入的数目,单位是事务的个数
+| wsrep_replicated_bytes           | 1833                                    |已经复制过的wsrep_replicated个事务总字节大小的总和
+| wsrep_repl_keys                  | 8                                       |
 | wsrep_repl_keys_bytes            | 248                                     |
 | wsrep_repl_data_bytes            | 1073                                    |
 | wsrep_repl_other_bytes           | 0                                       |
