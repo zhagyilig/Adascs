@@ -112,3 +112,80 @@ mysql> show global status like '%wsrep%';
 67 rows in set (0.01 sec)
 
 # 变量参数
+PXC 变量参数:
+
+#wsrep_provider_options
+base_dir = /data/mysql/mysql6306/data/; base_host = 172.168.64.92; base_port = 4567; debug = no; evs.auto_evict = 0; evs.causal_keepalive_period = PT1S; evs.debug_log_mask = 0x1; evs.delay_margin = PT1S; evs.delayed_keep_period = PT30S; evs.inactive_check_period = PT0.5S; evs.inactive_timeout = PT15S; evs.info_log_mask = 0; evs.install_timeout = PT7.5S; evs.join_retrans_period = PT1S; evs.keepalive_period = PT1S; evs.max_install_timeouts = 3; evs.send_window = 10; evs.stats_report_period = PT1M; evs.suspect_timeout = PT5S; evs.use_aggregate = true; evs.user_send_window = 4; evs.version = 0; evs.view_forget_timeout = P1D; gcache.keep_pages_count = 0; gcache.keep_pages_size = 0;  gcache.recover = no; gcache.size = 128M; gcomm.thread_prio = ; gcs.fc_debug = 0;   gcs.fc_master_slave = no; gcs.max_packet_size = 64500; gcs.max_throttle = 0.25; gcs.recv_q_hard_limit = 9223372036854775807; gcs.recv_q_soft_limit = 0.25; gcs.sync_donor = no;gmcast.mcast_addr = ; gmcast.mcast_ttl = 1; gmcast.peer_timeout = PT3S; gmcast.time_wait = PT5S; gmcast.version = 0; pc.announce_timeout = PT3S; pc.checksum = false; pc.ignore_quorum = false; pc.ignore_sb = false; pc.linger = PT20S; pc.npvo = false; pc.recovery = true; pc.version = 0; pc.wait_prim = true; pc.wait_prim_timeout = PT30S; protonet.backend = asio; protonet.version = 0; repl.causal_read_timeout = PT30S; repl.commit_order = 3; repl.key_format = FLAT8; repl.max_ws_size = 2147483647; repl.proto_max = 7; socket.checksum = 2; socket.recv_buf_size = 212992;  |
+
+
+cert.log_conflicts = no;
+gcache.dir = /data/mysql/mysql6306/data/;
+gcache.name = /data/mysql/mysql6306/data//galera.cache;
+gcache.mem_size = 0 不建议使用
+gcache.page_size = 128M; 
+
+gcs.fc_limit = 100;
+gcs.fc_factor = 1;
+gcs.sync_donor = no;
+
+fc_master_slave = no;
+
+gmcast.listen_addr = tcp://0.0.0.0:4567; 
+gmcast.segment = 0;
+
+ist.recv_addr = 172.168.64.92; 
+
+pc.weight = 1; 
+
+repl.commit_order = 3;
+repl.max_ws_size = 2147483647;
+
+复制的内容：事务影响的keys加上这个事务对应的做的都有的binlog,就叫一个事务的写集
+
+
+
+##
+
+wsrep_auto_increment_control	ON
+wsrep_causal_reads	OFF
+wsrep_certify_nonPK	ON
+wsrep_cluster_name	pxc-cluster
+wsrep_convert_LOCK_to_trx	OFF
+wsrep_data_home_dir	/data/mysql/mysql6306/data/
+wsrep_dbug_option	
+wsrep_debug	OFF
+wsrep_dirty_reads	OFF
+wsrep_drupal_282555_workaround	OFF
+wsrep_forced_binlog_format	NONE
+wsrep_load_data_splitting	ON
+wsrep_log_conflicts	OFF
+wsrep_node_address	172.168.64.92
+wsrep_node_incoming_address	AUTO
+wsrep_node_name	pxc3
+wsrep_notify_cmd	
+wsrep_preordered	OFF
+wsrep_provider	/usr/local/mysql/lib/libgalera_smm.so 
+wsrep_reject_queries	NONE
+wsrep_replicate_myisam	OFF
+wsrep_restart_slave	OFF
+wsrep_slave_FK_checks	ON
+wsrep_slave_UK_checks	OFF
+wsrep_sst_auth	********
+wsrep_sst_donor	
+wsrep_sst_donor_rejects_queries	OFF
+wsrep_sst_method	xtrabackup-v2
+wsrep_sst_receive_address	AUTO
+wsrep_sync_wait	0
+
+
+
+## 
+wsrep_start_position	00000000-0000-0000-0000-000000000000:-1
+wsrep_slave_threads	1
+wsrep_retry_autocommit	1
+wsrep_recover	OFF
+wsrep_max_ws_size	2147483647  byte
+wsrep_max_ws_rows	0
+wsrep_desync	OFF  设置为on,该节点就成了异步复制模式
+wsrep_cluster_address	gcomm://172.168.64.89,172.168.64.91,172.168.64.92
+wsrep_OSU_method	TOI
