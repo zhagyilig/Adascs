@@ -1,0 +1,37 @@
+root@localhost:mysql9036.sock [(none)]>show privileges;
++-------------------------+---------------------------------------+-------------------------------------------------------+
+| Privilege               | Context                               | Comment                                               |
++-------------------------+---------------------------------------+-------------------------------------------------------+
+| Alter                   | Tables                                | To alter the table                                    |
+| Alter routine           | Functions,Procedures                  | To alter or drop stored functions/procedures          |更改或者删除存储函数或者存储过程的权限
+| Create                  | Databases,Tables,Indexes              | To create new databases and tables                    |必须有create的权限，才可以使用create table
+| Create routine          | Databases                             | To use CREATE FUNCTION/PROCEDURE                      |创建procedure,function
+| Create temporary tables | Databases                             | To use CREATE TEMPORARY TABLE                         |
+| Create view             | Tables                                | To create new views                                   |
+| Create user             | Server Admin                          | To create new users                                   |
+| Delete                  | Tables                                | To delete existing rows                               |删除表数据
+| Drop                    | Databases,Tables                      | To drop databases, tables, and views                  |删除库,表,视图
+| Event                   | Server Admin                          | To create, alter, drop and execute events             |
+| Execute                 | Functions,Procedures                  | To execute stored routines                            |创建存储过程
+| File                    | File access on server                 | To read and write files on the server                 |
+| Grant option            | Databases,Tables,Functions,Procedures | To give to other users those privileges you possess   |
+| Index                   | Tables                                | To create or drop indexes                             |创建索引
+| Insert                  | Tables                                | To insert data into tables                            |插入数据
+| Lock tables             | Databases                             | To use LOCK TABLES (together with SELECT privilege)   |
+| Process                 | Server Admin                          | To view the plain text of currently executing queries |查看processlist
+| Proxy                   | Server Admin                          | To make proxy user possible                           |
+| References              | Databases,Tables                      | To have references on tables                          |
+| Reload                  | Server Admin                          | To reload or refresh tables, logs and privileges      |
+| Replication client      | Server Admin                          | To ask where the slave or master servers are          |
+| Replication slave       | Server Admin                          | To read binary log events from the master             |
+| Select                  | Tables                                | To retrieve rows from table                           |必须有select的权限，才可以使用select table
+| Show databases          | Server Admin                          | To see all databases with SHOW DATABASES              |
+| Show view               | Tables                                | To see views with SHOW CREATE VIEW                    |
+| Shutdown                | Server Admin                          | To shut down the server                               |
+| Super                   | Server Admin                          | To use KILL thread, SET GLOBAL, CHANGE MASTER, etc.   |
+| Trigger                 | Tables                                | To use triggers                                       |
+| Create tablespace       | Server Admin                          | To create/alter/drop tablespaces                      |
+| Update                  | Tables                                | To update existing rows                               |更新表数据
+| Usage                   | Server Admin                          | No privileges - allow connect only                    |连接(登陆)权限,建立一个用户,就会自动授予其usage权限(默认授予),只能用于数据库登陆，不能执行任何操作,且usage权限不能被回收,也即REVOKE用户并不能删除用户
++-------------------------+---------------------------------------+-------------------------------------------------------+
+31 rows in set (0.00 sec)
