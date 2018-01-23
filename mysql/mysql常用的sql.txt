@@ -1,0 +1,61 @@
+# 统计整个实例表的数量
+root@localhost:mysql9037.sock [information_schema]>select table_schema, count(*) from information_schema.tables group by table_schema;
++--------------------+----------+
+| table_schema       | count(*) |
++--------------------+----------+
+| crash              |        3 |
+| employees          |        6 |
+| fms                |       21 |
+| information_schema |       61 |
+| jf_django          |       14 |
+| mysite             |       13 |
+| mysql              |       33 |
+| part               |        4 |
+| percona_schema     |        1 |
+| performance_schema |       87 |
+| pt                 |        1 |
+| pt_user            |        1 |
+| reboot12           |        7 |
+| stark              |       29 |
+| sys                |      101 |
++--------------------+----------+
+15 rows in set (0.01 sec)
+
+# 指定库下标的engine
+root@localhost:mysql9037.sock [information_schema]>select  table_name, engine from information_schema.tables where table_schema='crash';
++-------------+--------+
+| table_name  | engine |
++-------------+--------+
+| index_usage | InnoDB |
+| innodb      | InnoDB |
+| recovery    | InnoDB |
++-------------+--------+
+3 rows in set (0.00 sec)
+
+# 数据库下表批量改名
+root@localhost:mysql9037.sock [rename_schema]>show tables from crash;
++-----------------+
+| Tables_in_crash |
++-----------------+
+| index_usage     |
+| innodb          |
+| recovery        |
++-----------------+
+3 rows in set (0.00 sec)
+
+root@localhost:mysql9037.sock [rename_schema]>show tables;
+Empty set (0.00 sec)
+
+root@localhost:mysql9037.sock [rename_schema]>select concat("rename table crash.",table_name," to rename_schema.",table_name,";") from information_schema.tables where table__schema="crash";
++------------------------------------------------------------------------------+
+| concat("rename table crash.",table_name," to rename_schema.",table_name,";") |
++------------------------------------------------------------------------------+
+| rename table crash.index_usage to rename_schema.index_usage;                 |
+| rename table crash.innodb to rename_schema.innodb;                           |
+| rename table crash.recovery to rename_schema.recovery;                       |
++------------------------------------------------------------------------------+
+3 rows in set (0.00 sec)
+
+root@localhost:mysql9037.sock [rename_schema]>select concat("rename table crash.",table_name," to rename_schema.",table_name,";") from information_schema.tables where table_schema="crash" into outfile '/tmp/rename.sql';
+Query OK, 3 rows affected (0.00 sec)
+
