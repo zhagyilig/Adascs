@@ -59,3 +59,22 @@ root@localhost:mysql9037.sock [rename_schema]>select concat("rename table crash.
 root@localhost:mysql9037.sock [rename_schema]>select concat("rename table crash.",table_name," to rename_schema.",table_name,";") from information_schema.tables where table_schema="crash" into outfile '/tmp/rename.sql';
 Query OK, 3 rows affected (0.00 sec)
 
+# 查新表的索引
+root@localhost:mysql5502.sock [app_fam_user]>select  table_schema, table_name, index_schema,index_name, count(*) from information_schema.statistics where table_schema <>'sys' and table_schema <> 'mysql' group by table_name;
++--------------+---------------------------------+--------------+------------+----------+
+| table_schema | table_name                      | index_schema | index_name | count(*) |
++--------------+---------------------------------+--------------+------------+----------+
+| app_fam_user | app_tb_feedback                 | app_fam_user | PRIMARY    |        1 |
+| app_fam_user | app_tb_gravida_appointment      | app_fam_user | PRIMARY    |        1 |
+| app_fam_user | app_tb_patient_bmi              | app_fam_user | PRIMARY    |        1 |
+| app_fam_user | app_tb_patient_pressure         | app_fam_user | PRIMARY    |        1 |
+| app_fam_user | app_tb_patient_selffpb          | app_fam_user | PRIMARY    |        1 |
+| app_fam_user | app_tb_physicalexamination_info | app_fam_user | PRIMARY    |        1 |
+| app_fam_user | app_tb_register_info            | app_fam_user | PRIMARY    |        2 |
+| app_fam_user | app_tb_reservation_info         | app_fam_user | PRIMARY    |        1 |
+| app_fam_user | app_tb_scheduleinfo             | app_fam_user | PRIMARY    |        1 |
+| app_fam_user | app_tb_vaccination_info         | app_fam_user | PRIMARY    |        1 |
+| app_fam_user | app_update                      | app_fam_user | PRIMARY    |        2 |
++--------------+---------------------------------+--------------+------------+----------+
+11 rows in set (0.00 sec)
+
