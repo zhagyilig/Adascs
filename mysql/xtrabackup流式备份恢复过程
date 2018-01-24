@@ -16,14 +16,14 @@ xbstream:
 
 
 tar:
-  cd /tmp/bak/
-  mkdir backup_eye_recovery
-  tar xf fusCN_0335501_full_20180124.tar.gz -C /tmp/bak/backup_eye_recovery
-  cd  /tmp/bak/backup_eye_recovery
-  ls
-  cat xtrabackup_checkpoints 
-  cd ..
-  du -sh bak/
-  innobackupex  --defaults-file=bak/backup-my.cnf  --apply-log /tmp/bak/backup_eye_recovery
-  du -sh bak/
-  cat /tmp/bak/backup_eye_recovery/xtrabackup_checkpoints
+	cd /tmp/bak/
+	mkdir backup_eye_recovery
+	tar xf fusCN_0335501_full_20180124.tar.gz -C /tmp/bak/backup_eye_recovery
+	cd  /tmp/bak/backup_eye_recovery
+	ls
+	cat xtrabackup_checkpoints 
+	cd ..
+	du -sh bak/
+	innobackupex  --defaults-file=bak/backup-my.cnf  --apply-log /tmp/bak/backup_eye_recovery
+	du -sh bak/
+	cat /tmp/bak/backup_eye_recovery/xtrabackup_checkpoints
