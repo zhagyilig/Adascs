@@ -1,16 +1,42 @@
-PXC集群172.19.29.12数据恢复演练:
+PXC集群172.19.xx.xx数据恢复演练:
+
+# 官网：
+     https://www.percona.com/doc/percona-xtrabackup/LATEST/backup_scenarios/compressed_backup.html
+     https://www.percona.com/doc/percona-xtrabackup/LATEST/xtrabackup_bin/xbk_option_reference.html
+
+# 备份脚本：
+#!/bin/bash
+/usr/bin/innobackupex  --defaults-file=/etc/my.cnf --socket=/tmp/mysql.sock --user=sstuser \
+		       --password=cv5O4nT5vhgPfSSP7jVU --compress --compress-threads=4  --stream=xbstream \
+		       --parallel=4 --no-timestamp  --no-version-check  --kill-long-queries-timeout=30 \
+		       --kill-long-query-type=select  ./> /var/lib/mysql/db_backup/backup_eye/data_`date "+%F-%H-%M"`.xbstream
+
+/bin/find /var/lib/mysql/db_backup/backup_eye  -type f -mtime +5 -delete
+
+# 压缩备份方式:
 xbstream:
 	cd /var/lib/mysql/db_backup
 	mkdir backup_eye_recovery
 	xbstream  -x < data_2018-01-18-04-30.xbstream -C ../backup_eye_recovery/
 	du -sh backup_eye_recovery/
+	
+	1.解压:
 	cd backup_eye_recovery/
 	find . -iname "*\.qp"
 	for n in `find . -iname "*\.qp"`; do qpress -d $n $(dirname $n) && rm -f $n; done
 	ls
 	cd ..
 	du -sh backup_eye_recovery/
+	
+	2.解压：
+	innobackupex --remove-original --decompress backup_eye_recovery/
+	
+	--remove-original:
+	Implemented in Percona XtraBackup 2.4.6, this option when specified will remove .qp, 
+	.xbcrypt and .qp.xbcrypt files after decryption and decompression.
+
 	innobackupex  --defaults-file=./backup_eye_recovery/backup-my.cnf --apply-log /var/lib/mysql/db_backup/backup_eye_recovery/
+	
 	cat  backup_eye_recovery/xtrabackup_checkpoints 
 
 tar:
@@ -18,7 +44,6 @@ tar:
 	mkdir backup_eye_recovery
 	tar zivxf fusCN_0335501_full_20180124.tar.gz -C /tmp/bak/backup_eye_recovery
 	cd  /tmp/bak/backup_eye_recovery
-	ls
 	cat xtrabackup_checkpoints 
 	cd ..
 	du -sh bak/
