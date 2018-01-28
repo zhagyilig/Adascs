@@ -21,7 +21,7 @@ case "$1" in
         then
                 echo "$PIDFILE exists, process is already running or crashed"
         else
-                action "Starting Redis serveri ..." /bin/true
+                action "Starting Redis server ..." /bin/true
                 $EXEC $CONF
         fi
         ;;
@@ -42,31 +42,10 @@ case "$1" in
         fi
         ;;
      restart)
-        if [ ! -f $PIDFILE ]
-        then
-                echo "$PIDFILE does not exist, process is not running"
-        else
-                PID=$(cat $PIDFILE)
-                echo "Stopping ..."
-                $CLIEXEC -p $REDISPORT shutdown
-                while [ -x /proc/${PID} ]
-                do
-                    echo "Waiting for Redis to shutdown ..."
-                    sleep 1
-                done
-                echo "Redis stopped"
-        fi
+        $0 stop
         sleep 1
-          if [ -f $PIDFILE ]
-        then
-                echo "$PIDFILE exists, process is already running or crashed"
-        else
-                echo "Starting Redis server..."
-                $EXEC $CONF
-        fi
+        $0 start
         ;;
-  
     *)
         echo -e "Usage: $0 {start|stop|restart}"
-        ;;
 esac
