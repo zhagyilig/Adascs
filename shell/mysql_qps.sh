@@ -1,6 +1,6 @@
 #!/bin/sh
 
-mysqladmin  -uroot -pbTa*Eozx9ba0123 -S /home/mysql/mysql_9036/mysql.sock -i 1 extended-status |\
+mysqladmin  --login-path=0169036 -i 1 extended-status |\
 awk -F"|" \
 "BEGIN{ count=0; }"\
 '{ if($2 ~ /Variable_name/ && ((++count)%20 == 1)){\
