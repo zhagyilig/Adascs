@@ -6,7 +6,7 @@ echo "########################################################"
 echo
 echo "##################关键status检查########################"
 status(){
-mysqladmin  -uroot -pbTa*Eozx9ba0123 -S /home/mysql/mysql_9036/mysql.sock extended-status | awk 'BEGIN { FS="|";s=0; } \
+mysqladmin --login-path=0169036 extended-status | awk 'BEGIN { FS="|";s=0; } \
 {if($2 ~ /Aborted_connects/){s=1} \
 else if($2 ~ /Created_tmp_disk_tables/){s=1} \
 else if($2 ~ /Created_tmp_tables/){s=1} \
