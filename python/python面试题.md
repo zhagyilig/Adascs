@@ -1,7 +1,7 @@
 ### 1.补充缺失的代码
-> 为什么提这个问题：
-说明面试者对与操作系统交互的基础知识
-递归真是太好用啦
+> 为什么提这个问题：  
+说明面试者对与操作系统交互的基础知识  
+递归真是太好用啦  
 ```
 def print_directory_contents(sPath):
     """
@@ -11,6 +11,7 @@ def print_directory_contents(sPath):
 
     """
     # 补充代码
+
 答案
 def print_directory_contents(sPath):
     import os                                       
