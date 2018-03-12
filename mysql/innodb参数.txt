@@ -1,0 +1,223 @@
+查看innodb version:
+SELECT * FROM information_schema.plugins; 
+show variables like 'innodb_version';
+
+
+innodb_purge_threads = 4
+innodb_old_blocks_pct = 37
+innodb_old_blocks_time = 1000
+
+1.innodb  variables 
+root@changning-slave-9036 10:2736 [(none)]>show variables like 'innodb%';
++-------------------------------------------+-------------------------+
+| Variable_name                             | Value                   |
++-------------------------------------------+-------------------------+
+| innodb_adaptive_flushing                  | ON 自适应的刷新，改值影响每秒刷新脏页的数量。
+| innodb_adaptive_flushing_lwm              | 10                      |
+| innodb_adaptive_hash_index                | ON 开启hash自适应哈希索引
+| innodb_adaptive_hash_index_partitions     | 1                       |
+| innodb_adaptive_max_sleep_delay           | 150000                  |
+| innodb_additional_mem_pool_size           | 8388608                 |
+| innodb_api_bk_commit_interval             | 5                       |
+| innodb_api_disable_rowlock                | OFF                     |
+| innodb_api_enable_binlog                  | OFF                     |
+| innodb_api_enable_mdl                     | OFF                     |
+| innodb_api_trx_level                      | 0                       |
+| innodb_autoextend_increment               | 64                      |
+| innodb_autoinc_lock_mode                  | 1                       |
+| innodb_buffer_pool_dump_at_shutdown       | OFF                     |
+| innodb_buffer_pool_dump_now               | OFF                     |
+| innodb_buffer_pool_filename               | ib_buffer_pool          |
+| innodb_buffer_pool_instances              | 8                       |
+| innodb_buffer_pool_load_abort             | OFF                     |
+| innodb_buffer_pool_load_at_startup        | OFF                     |
+| innodb_buffer_pool_load_now               | OFF                     |
+| innodb_buffer_pool_populate               | OFF                     |
+| innodb_buffer_pool_size                   | 12884901888             |
+| innodb_change_buffer_max_size             | 25 控制change buffer(DELETES INSERTS)最大使用的内存数量， 默认25，表示最多使用1/4缓冲池内存空间，注意：改参数的最大有效值为50；
+| innodb_change_buffering                   | all 用来开启各种buffer的选项《innodb engine》 p49
+| innodb_checksum_algorithm                 | innodb                  |
+| innodb_checksums                          | ON                      |
+| innodb_cleaner_lsn_age_factor             | high_checkpoint         |
+| innodb_cmp_per_index_enabled              | OFF                     |
+| innodb_commit_concurrency                 | 0                       |
+| innodb_compression_failure_threshold_pct  | 5                       |
+| innodb_compression_level                  | 6                       |
+| innodb_compression_pad_pct_max            | 50                      |
+| innodb_concurrency_tickets                | 5000                    |
+| innodb_corrupt_table_action               | assert                  |
+| innodb_data_file_path                     | ibdata1:512M:autoextend |
+| innodb_data_home_dir                      |                         |
+| innodb_disable_sort_file_cache            | OFF                     |
+| innodb_doublewrite                        | ON                      |
+| innodb_empty_free_list_algorithm          | backoff                 |
+| innodb_fake_changes                       | OFF                     |
+| innodb_fast_shutdown                      | 1 数据库关闭将脏页刷新到disk，取值： 0 1（default） 2
+| innodb_file_format                        | Barracuda               |
+| innodb_file_format_check                  | ON                      |
+| innodb_file_format_max                    | Barracuda               |
+| innodb_file_per_table                     | ON                      |
+| innodb_flush_log_at_timeout               | 1                       |
+| innodb_flush_log_at_trx_commit            | 2                       |
+| innodb_flush_method                       | O_DIRECT 设置改参数是告诉系统，直接将数据写入磁盘 ，跳过文件系统的缓存。等同于使用 裸设备 的效果
+| innodb_flush_neighbors                    | 0  刷新邻接页，通过AIO可以将多个io写入合并操作合并为一个io，机械硬盘建议开启，ssh建议关闭（0）
+| innodb_flushing_avg_loops                 | 30                      |
+| innodb_force_load_corrupted               | OFF                     |
+| innodb_force_recovery                     | 0  影响innodb engine的回复状况，取值 1~6，大的数字表示包含了前面的数字的表示的影响，默认0：表示发生需要恢复时间，进行所有的操作，并把error写到error.log
+| innodb_foreground_preflush                | exponential_backoff     |
+| innodb_ft_aux_table                       |                         |
+| innodb_ft_cache_size                      | 8000000                 |
+| innodb_ft_enable_diag_print               | OFF                     |
+| innodb_ft_enable_stopword                 | ON                      |
+| innodb_ft_max_token_size                  | 84                      |
+| innodb_ft_min_token_size                  | 3                       |
+| innodb_ft_num_word_optimize               | 2000                    |
+| innodb_ft_result_cache_limit              | 2000000000              |
+| innodb_ft_server_stopword_table           |                         |
+| innodb_ft_sort_pll_degree                 | 2                       |
+| innodb_ft_total_cache_size                | 640000000               |
+| innodb_ft_user_stopword_table             |                         |
+| innodb_io_capacity                        | 2000 表示磁盘的吞吐量，默认200，规则如下：
+| innodb_io_capacity_max                    | 4000                    |
+| innodb_kill_idle_transaction              | 0                       |
+| innodb_large_prefix                       | OFF                     |
+| innodb_lock_wait_timeout                  | 50                      |
+| innodb_locking_fake_changes               | ON                      |
+| innodb_locks_unsafe_for_binlog            | OFF                     |
+| innodb_log_arch_dir                       | ./                      |
+| innodb_log_arch_expire_sec                | 0                       |
+| innodb_log_archive                        | OFF                     |
+| innodb_log_block_size                     | 512                     |
+| innodb_log_buffer_size                    | 33554432                |
+| innodb_log_checksum_algorithm             | innodb                  |
+| innodb_log_compressed_pages               | ON                      |
+| innodb_log_file_size                      | 1073741824              |
+| innodb_log_files_in_group                 | 3                       |
+| innodb_log_group_home_dir                 | ./                      |
+| innodb_lru_scan_depth                     | 1024 控制LRU列表中可用页的数量
+| innodb_max_bitmap_file_size               | 104857600               |
+| innodb_max_changed_pages                  | 1000000                 |
+| innodb_max_dirty_pages_pct                | 40  当缓冲池中的脏页的数量占据40%时，强制使用Checkpoint,刷新一部分的脏页到磁盘
+| innodb_max_dirty_pages_pct_lwm            | 0                       |
+| innodb_max_purge_lag                      | 0                       |
+| innodb_max_purge_lag_delay                | 0                       |
+| innodb_mirrored_log_groups                | 1                       |
+| innodb_monitor_disable                    |                         |
+| innodb_monitor_enable                     |                         |
+| innodb_monitor_reset                      |                         |
+| innodb_monitor_reset_all                  |                         |
+| innodb_old_blocks_pct                     | 37                      |
+| innodb_old_blocks_time                    | 1000                    |
+| innodb_online_alter_log_max_size          | 134217728               |
+| innodb_open_files                         | 512                     |
+| innodb_optimize_fulltext_only             | OFF                     |
+| innodb_page_size                          | 16384                   |
+| innodb_print_all_deadlocks                | OFF                     |
+| innodb_purge_batch_size                   | 300 控制每次full purge回收的undo的数量，改值可以动态调整。
+| innodb_purge_threads                      | 1                       |
+| innodb_random_read_ahead                  | OFF                     |
+| innodb_read_ahead_threshold               | 56                      |
+| innodb_read_io_threads                    | 4                       |
+| innodb_read_only                          | OFF                     |
+| innodb_replication_delay                  | 0                       |
+| innodb_rollback_on_timeout                | OFF                     |
+| innodb_rollback_segments                  | 128                     |
+| innodb_sched_priority_cleaner             | 19                      |
+| innodb_show_locks_held                    | 10                      |
+| innodb_show_verbose_locks                 | 0                       |
+| innodb_sort_buffer_size                   | 67108864                |
+| innodb_spin_wait_delay                    | 6                       |
+| innodb_stats_auto_recalc                  | ON                      |
+| innodb_stats_method                       | nulls_equal             |
+| innodb_stats_on_metadata                  | OFF                     |
+| innodb_stats_persistent                   | ON                      |
+| innodb_stats_persistent_sample_pages      | 20                      |
+| innodb_stats_sample_pages                 | 8                       |
+| innodb_stats_transient_sample_pages       | 8                       |
+| innodb_status_output                      | OFF                     |
+| innodb_status_output_locks                | OFF                     |
+| innodb_strict_mode                        | OFF                     |
+| innodb_support_xa                         | ON                      |
+| innodb_sync_array_size                    | 1                       |
+| innodb_sync_spin_loops                    | 30                      |
+| innodb_table_locks                        | ON                      |
+| innodb_thread_concurrency                 | 40                      |
+| innodb_thread_sleep_delay                 | 0                       |
+| innodb_track_changed_pages                | OFF                     |
+| innodb_undo_directory                     | .                       |
+| innodb_undo_logs                          | 128                     |
+| innodb_undo_tablespaces                   | 0                       |
+| innodb_use_atomic_writes                  | OFF                     |
+| innodb_use_global_flush_log_at_trx_commit | ON                      |
+| innodb_use_native_aio                     | ON 开启AIO（异步io），官方测试启用回复速度提升75% 
+| innodb_use_sys_malloc                     | ON                      |
+| innodb_version                            | 5.6.20-rel68.0          |
+| innodb_write_io_threads                   | 4                       |
++-------------------------------------------+-------------------------+
+141 rows in set (0.00 sec)
+
+2.innodb global status 
+root@jingan-db 09:34:21 [(none)]>show  global status like 'innodb%';
++---------------------------------------+-------------+
+| Variable_name                         | Value       |
++---------------------------------------+-------------+
+| Innodb_buffer_pool_dump_status        | not started |
+| Innodb_buffer_pool_load_status        | not started |
+| Innodb_buffer_pool_pages_data         | 507331      |
+| Innodb_buffer_pool_bytes_data         | 8312111104  |
+| Innodb_buffer_pool_pages_dirty        | 166846      |
+| Innodb_buffer_pool_bytes_dirty        | 2733604864  |
+| Innodb_buffer_pool_pages_flushed      | 512107      |表示当前从缓冲池刷新到磁盘页的数量，与下面的 Innodb_dblwr_pages_written 相等。
+| Innodb_buffer_pool_pages_free         | 8149        |
+| Innodb_buffer_pool_pages_misc         | 8800        |
+| Innodb_buffer_pool_pages_total        | 524280      |
+| Innodb_buffer_pool_read_ahead_rnd     | 0           |
+| Innodb_buffer_pool_read_ahead         | 362241      |
+| Innodb_buffer_pool_read_ahead_evicted | 467         |
+| Innodb_buffer_pool_read_requests      | 13813057977 |
+| Innodb_buffer_pool_reads              | 1029796     |
+| Innodb_buffer_pool_wait_free          | 0           |
+| Innodb_buffer_pool_write_requests     | 27591505    |
+| Innodb_data_fsyncs                    | 125330      |
+| Innodb_data_pending_fsyncs            | 0           |
+| Innodb_data_pending_reads             | 2           |
+| Innodb_data_pending_writes            | 0           |
+| Innodb_data_read                      | 24970973184 |
+| Innodb_data_reads                     | 1524987     |
+| Innodb_data_writes                    | 718477      |
+| Innodb_data_written                   | 19405372928 |
+| Innodb_dblwr_pages_written            | 512107      |
+| Innodb_dblwr_writes                   | 27633       |
+root@jingan-db 09:33:09 [(none)]>select 512107/27633;
++--------------+
+| 512107/27633 |
++--------------+
+|      18.5324 | 双写的运行情况，这个值小于64:1，说明系统的写入压力不是很高
++--------------+
+
+| Innodb_have_atomic_builtins           | ON          |
+| Innodb_log_waits                      | 0           |
+| Innodb_log_write_requests             | 4722126     |
+| Innodb_log_writes                     | 157610      |
+| Innodb_os_log_fsyncs                  | 19990       |
+| Innodb_os_log_pending_fsyncs          | 0           |
+| Innodb_os_log_pending_writes          | 0           |
+| Innodb_os_log_written                 | 2356682240  |
+| Innodb_page_size                      | 16384       |
+| Innodb_pages_created                  | 104806      |
+| Innodb_pages_read                     | 1524143     |
+| Innodb_pages_written                  | 520220      |
+| Innodb_row_lock_current_waits         | 0           |
+| Innodb_row_lock_time                  | 0           |
+| Innodb_row_lock_time_avg              | 0           |
+| Innodb_row_lock_time_max              | 0           |
+| Innodb_row_lock_waits                 | 0           |
+| Innodb_rows_deleted                   | 377368      |
+| Innodb_rows_inserted                  | 6227104     |
+| Innodb_rows_read                      | 17610710408 |
+| Innodb_rows_updated                   | 7797        |
+| Innodb_num_open_files                 | 500         |
+| Innodb_truncated_status_writes        | 0           |
+| Innodb_available_undo_logs            | 128         |
++---------------------------------------+-------------+
+51 rows in set (0.00 sec)
