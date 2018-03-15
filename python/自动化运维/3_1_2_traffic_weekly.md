@@ -1,4 +1,5 @@
-### 脚本：
+### 脚本：  
+```
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 # Author : xtrdb.net
@@ -75,7 +76,7 @@ chart.set_title({'name':'业务流量周报图表'})
 chart.set_y_axis({'name': 'Mb/s'})
 worksheet.insert_chart('A8', chart)
 workbook.close()
-
+```
 
 ### 结果：
 ![http://ou529e3sj.bkt.clouddn.com/xlsxwriter.png](http://ou529e3sj.bkt.clouddn.com/xlsxwriter.png)
