@@ -2,11 +2,12 @@
 # -*- coding: utf-8 -*-
 # Author : xtrdb.net
 
+
 import xlsxwriter
+
 
 workbook = xlsxwriter.Workbook('chart.xlsx')
 worksheet = workbook.add_worksheet()
-
 chart = workbook.add_chart({'type':'column'})
 
 title = ['业务名称',
