@@ -75,4 +75,3 @@ chart.set_title({'name':'业务流量周报图表'})
 chart.set_y_axis({'name': 'Mb/s'})
 worksheet.insert_chart('A8', chart)
 workbook.close()
-
