@@ -9,7 +9,7 @@ from fabric.contrib.console import confirm
 
 env.user='admin'
 env.hosts=['139.19.8.59']
-
+ 
 @task
 @runs_once
 def tar_task():
