@@ -34,3 +34,4 @@ text2_lines = readfile(textfile2)
 
 d = difflib.HtmlDiff()
 print(d.make_file(text1_lines, text2_lines))
+
