@@ -21,6 +21,8 @@ root@localhost:mysql9037.sock [information_schema]>select table_schema, count(*)
 +--------------------+----------+
 15 rows in set (0.01 sec)
 
+或者：select table_schema, count(*) from information_schema.tables where table_schema not in ('mysql','information_schema','performance_schema') group by table_schema;
+
 # 指定库下标的engine
 root@localhost:mysql9037.sock [information_schema]>select  table_name, engine from information_schema.tables where table_schema='crash';
 +-------------+--------+
