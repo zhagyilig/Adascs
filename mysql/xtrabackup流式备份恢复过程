@@ -5,12 +5,20 @@ PXC集群172.19.xx.xx数据恢复演练:
      https://www.percona.com/doc/percona-xtrabackup/LATEST/xtrabackup_bin/xbk_option_reference.html
 
 # 备份脚本：
+#xbstream
 #!/bin/bash
 /usr/bin/innobackupex  --defaults-file=/etc/my.cnf --socket=/tmp/mysql.sock --user=sstuser \
-		       --password=cv5O4nT5vhgPfSSP7jVU --compress --compress-threads=4  --stream=xbstream \
+		       --password='xxx' --compress --compress-threads=4  --stream=xbstream \
 		       --parallel=4 --no-timestamp  --no-version-check  --kill-long-queries-timeout=30 \
 		       --kill-long-query-type=select  ./> /var/lib/mysql/db_backup/backup_eye/data_`date "+%F-%H-%M"`.xbstream
 
+# tar
+#!/bin/sh
+
+cnf="/data/mysql/mysql5501/my5501.cnf"
+stream_path="/data/inno"
+
+innobackupex --defaults-file=$cnf --user=sstuser --password='xxxx' --host=localhost --port=5501 --no-timestamp --stream=tar /tmp | ssh pudong-db-backup \ " gzip >$stream_path/0185501_full_`date +%Y%m%d`.tar.gz"
 /bin/find /var/lib/mysql/db_backup/backup_eye  -type f -mtime +5 -delete
 
 # 压缩备份方式:
