@@ -1,0 +1,13 @@
+[Unit]
+Description=supervisord
+Documentation=man:supervisord
+After=network.target
+
+[Service]
+Type=forking
+ExecStart=/usr/local/bin/supervisord
+GuessMainPID=no
+Restart=on-abnormal
+
+[Install]
+WantedBy=multi-user.target
