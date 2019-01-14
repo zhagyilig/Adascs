@@ -31,9 +31,7 @@ def main():
 
     # DNS records to create
     dns_records = [
-        {'name': 'slq-test-mongo-8', 'type': 'A', 'content': '192.168.199.175'},
-        {'name': 'slq-test-mongo-9', 'type': 'A', 'content': '192.168.199.176'},
-        {'name': 'slq-test-mongo-10', 'type': 'A', 'content': '192.168.199.177'},
+        {'name': 'xx-test-xxxx', 'type': 'A', 'content': '192.168.xx.75'},
     ]
 
     print('Create DNS records ...')
