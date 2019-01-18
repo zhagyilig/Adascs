@@ -58,6 +58,7 @@ class Backup(object):
         if status == 1:
             return 1
         return 0
+
 def runCommand(command):
     cmd = shlex.split(command)
     logging.debug('Running back command: "' + command + '"')
