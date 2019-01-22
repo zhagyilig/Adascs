@@ -4,12 +4,20 @@
 # description:
 
 
+import sys
 import json
 import requests
 
-url = 'https://xxx/zabbix/api_jsonrpc.php'
-headers = {'Content-Type': 'application/json-rpc'}
+try:
+    auth = sys.argv[1]
+    url = sys.argv[2]
+    passwd = sys.argv[3]
+except IndexError:
+    exit('Usage: %s auth zabbix_url zabbix_passwd' % sys.argv[0])
 
+
+url = 'https://%s/zabbix/api_jsonrpc.php' % url
+headers = {'Content-Type': 'application/json-rpc'}
 
 def apiinfo():
     """获取zabbix版本"""
@@ -33,8 +41,8 @@ def userlogin():
         "jsonrpc": "2.0",
         "method": "user.login",
         "params": {
-            "user": "xxx",
-            "password": "xxx"
+            "user": "zhangyiling",
+            "password": "%s" % passwd
         },
         "id": 1,
         "auth": None
@@ -53,7 +61,7 @@ def get_hosts_info():
             "output": ["hostid", "host", ],
             "selectInterfaces": ["ip", ],
         },
-        "auth": "xxxx",
+        "auth": "%s" % auth,
         "id": 1
     }
 
@@ -85,22 +93,22 @@ def crate_host():
             ],
             "templates": [
                 {
-                    "templateid": "10001"
+                    "templateid": "10001",
                 }
             ],
-            "macros": [
-                {
-                    "macro": "{$USER_ID}",
-                    "value": "123321"
-                }
-            ],
+            # "macros": [
+            #     {
+            #         "macro": "{$USER_ID}",
+            #         "value": "123321"
+            #     }
+            # ],
             # "inventory_mode": 0,
             # "inventory": {
             #     "macaddress_a": "01234",
             #     "macaddress_b": "56768"
             # }
         },
-        "auth": "xxx",
+        "auth": "%s" % auth,
         "id": 1
     }
     r = requests.post(url, headers=headers, data=json.dumps(data))
@@ -120,7 +128,7 @@ def get_host_group():
                 ]
             }
         },
-        "auth": "xxx",
+        "auth": "%s" % auth,
         "id": 1
     }
 
@@ -136,12 +144,11 @@ def get_tmplate():
             "output": "extend",
             "filter": {
                 "host": [
-                    "Template OS Linux",
-                    "Template OS Windows"
+                    "Template OS Linux", # 10001
                 ]
             }
         },
-        "auth": "xxx",
+        "auth": "%s" % auth,
         "id": 1
     }
 
@@ -157,7 +164,7 @@ def del_host():
         "params": [
             "10562",
         ],
-        "auth": "xxx",
+        "auth": "%s" % auth,
         "id": 1
     }
 
@@ -172,4 +179,4 @@ if __name__ == '__main__':
     # get_host_group()
     # get_tmplate()
     crate_host()
-    del_host()
+    # del_host()

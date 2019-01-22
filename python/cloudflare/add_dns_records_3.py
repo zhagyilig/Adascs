@@ -34,6 +34,8 @@ def main():
         {'name': 'xx-test-xxxx', 'type': 'A', 'content': '192.168.xx.75'},
     ]
 
+
+
     print('Create DNS records ...')
     for dns_record in dns_records:
         # Create DNS record
