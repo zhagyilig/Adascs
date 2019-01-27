@@ -8,16 +8,21 @@ import sys
 import json
 import requests
 
-try:
-    auth = sys.argv[1]
-    url = sys.argv[2]
-    passwd = sys.argv[3]
-except IndexError:
-    exit('Usage: %s auth zabbix_url zabbix_passwd' % sys.argv[0])
 
-
-url = 'https://%s/zabbix/api_jsonrpc.php' % url
+# 认证相关配置文件
+conf_info = '/Users/mac/.config/py_conf/conf'
 headers = {'Content-Type': 'application/json-rpc'}
+
+# 加载配置文件
+try:
+    with open(conf_info, 'r') as f:
+        conf_json = json.load(f)
+        url = conf_json['zabbix']['url']
+        auth = conf_json['zabbix']['auth']
+        passwd = conf_json['zabbix']['passwd']
+        print(url,auth)
+except FileNotFoundError as e:
+    print('No such file or directory: %s' % conf_info)
 
 def apiinfo():
     """获取zabbix版本"""
@@ -75,20 +80,20 @@ def crate_host():
         "jsonrpc": "2.0",
         "method": "host.create",
         "params": {
-            "host": "sql-xxx-test",
+            "host": "lsg-ops-1",
             "interfaces": [
                 {
                     "type": 1,
                     "main": 1,
                     "useip": 1,
-                    "ip": "192.168.199.xxx",
+                    "ip": "10.21.10.130",
                     "dns": "",
                     "port": "10050"
                 }
             ],
             "groups": [
                 {
-                    "groupid": "2"
+                    "groupid": "32"
                 }
             ],
             "templates": [
@@ -123,8 +128,7 @@ def get_host_group():
             "output": "extend",
             "filter": {
                 "name": [
-                    "Zabbix servers",
-                    "Linux servers"
+                    "server of lsg",  # 32
                 ]
             }
         },
@@ -144,7 +148,7 @@ def get_tmplate():
             "output": "extend",
             "filter": {
                 "host": [
-                    "Template OS Linux", # 10001
+                    "Template OS Linux",  # 10001
                 ]
             }
         },
@@ -177,6 +181,6 @@ if __name__ == '__main__':
     # userlogin()
     # get_hosts_info()
     # get_host_group()
-    # get_tmplate()
-    crate_host()
+    get_tmplate()
+    # crate_host()
     # del_host()
