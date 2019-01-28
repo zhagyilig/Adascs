@@ -1,0 +1,1 @@
+- 调用zabbix api对zabbix批量操作
