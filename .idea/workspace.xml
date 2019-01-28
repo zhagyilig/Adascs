@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e2f47dc2-8e6e-48b6-bb78-88c807cf6004" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" afterPath="$PROJECT_DIR$/.vscode/settings.json" />
+      <change beforePath="$PROJECT_DIR$/mysql/xtrabackup流式备份恢复过程" afterPath="$PROJECT_DIR$/mysql/xtrabackup流式备份恢复过程.txt" />
       <change beforePath="$PROJECT_DIR$/python/zabbix/elastizabbix" afterPath="$PROJECT_DIR$/python/zabbix/elastizabbix" />
-      <change beforePath="$PROJECT_DIR$/shell/mysql_backup.sh" afterPath="$PROJECT_DIR$/shell/mysql_backup.sh" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -53,11 +53,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mysql_backup.sh" pinned="false" current-in-tab="true">
+      <file leaf-file-name="mysql_backup.sh" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/shell/mysql_backup.sh">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="180">
               <caret line="10" column="18" lean-forward="true" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="xtrabackup流式备份恢复过程.txt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/mysql/xtrabackup流式备份恢复过程.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="23" lean-forward="false" selection-start-line="0" selection-start-column="23" selection-end-line="0" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -81,6 +91,8 @@
         <option value="$PROJECT_DIR$/python/zabbix/README.md" />
         <option value="$PROJECT_DIR$/python/cloudflare/README.md" />
         <option value="$PROJECT_DIR$/shell/mysql_backup.sh" />
+        <option value="$PROJECT_DIR$/.vscode/settings.json" />
+        <option value="$PROJECT_DIR$/mysql/xtrabackup流式备份恢复过程" />
       </list>
     </option>
   </component>
@@ -149,32 +161,29 @@
             <path>
               <item name="Adascs" type="b2602c69:ProjectViewProjectNode" />
               <item name="Adascs" type="462c0819:PsiDirectoryNode" />
+              <item name=".vscode" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Adascs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Adascs" type="462c0819:PsiDirectoryNode" />
+              <item name="mysql" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Adascs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Adascs" type="462c0819:PsiDirectoryNode" />
               <item name="python" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Adascs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Adascs" type="462c0819:PsiDirectoryNode" />
+              <item name="python" type="462c0819:PsiDirectoryNode" />
+              <item name=".idea" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Adascs" type="b2602c69:ProjectViewProjectNode" />
               <item name="Adascs" type="462c0819:PsiDirectoryNode" />
               <item name="python" type="462c0819:PsiDirectoryNode" />
               <item name="cloudflare" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Adascs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Adascs" type="462c0819:PsiDirectoryNode" />
-              <item name="python" type="462c0819:PsiDirectoryNode" />
-              <item name="jenkins" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Adascs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Adascs" type="462c0819:PsiDirectoryNode" />
-              <item name="python" type="462c0819:PsiDirectoryNode" />
-              <item name="zabbix" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Adascs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Adascs" type="462c0819:PsiDirectoryNode" />
-              <item name="python" type="462c0819:PsiDirectoryNode" />
-              <item name="zabbix" type="462c0819:PsiDirectoryNode" />
-              <item name="elastizabbix" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Adascs" type="b2602c69:ProjectViewProjectNode" />
@@ -229,7 +238,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
@@ -237,7 +245,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24964234" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24964234" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329602" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -413,10 +421,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.vscode/settings.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="1" lean-forward="true" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysql/mysql清空缓存.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/shell/mysql_backup.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="10" column="18" lean-forward="true" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysql/xtrabackup流式备份恢复过程.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="23" lean-forward="false" selection-start-line="0" selection-start-column="23" selection-end-line="0" selection-end-column="23" />
           <folding />
         </state>
       </provider>

@@ -1,4 +1,4 @@
-PXC集群172.19.xx.xx数据恢复演练:
+PXC集群172.19.xx.xx数据恢复演练
 
 # 官网：
      https://www.percona.com/doc/percona-xtrabackup/LATEST/backup_scenarios/compressed_backup.html
