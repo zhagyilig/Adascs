@@ -16,10 +16,10 @@ headers = {'Content-Type': 'application/json-rpc'}
 # 加载配置文件
 try:
     with open(conf_info, 'r') as f:
-        conf_json = json.load(f)
-        url = conf_json['zabbix']['url']
-        auth = conf_json['zabbix']['auth']
-        passwd = conf_json['zabbix']['passwd']
+        results = json.load(f)
+        url = results['zabbix']['url']
+        auth = results['zabbix']['auth']
+        passwd = results['zabbix']['passwd']
         print(url,auth)
 except FileNotFoundError as e:
     print('No such file or directory: %s' % conf_info)
