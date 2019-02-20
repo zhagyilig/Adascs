@@ -7,7 +7,7 @@
 import sys
 import json
 import requests
-
+import os
 
 # 认证相关配置文件
 conf_info = '/Users/mac/.config/py_conf/conf'
@@ -74,19 +74,19 @@ def get_hosts_info():
     print(json.dumps(r.json()))
 
 
-def crate_host():
+def crate_host(host, ip):
     """创建主机"""
     data = {
         "jsonrpc": "2.0",
         "method": "host.create",
         "params": {
-            "host": "lsg-ops-1",
+            "host": host ,
             "interfaces": [
                 {
                     "type": 1,
                     "main": 1,
                     "useip": 1,
-                    "ip": "10.21.10.130",
+                    "ip": ip,
                     "dns": "",
                     "port": "10050"
                 }
@@ -177,13 +177,17 @@ def del_host():
 
 
 if __name__ == '__main__':
-    # apiinfo()
-    # userlogin()
-    # get_hosts_info()
-    # get_host_group()
-    get_tmplate()
-    # crate_host()
-    # del_host()
-
-    api_test_try
-    tableau
+    host_list = []
+    ip_list = []
+   
+    for host in host_list:
+        for ip in ip_list:
+            pass
+        crate_host(host,ip)
+        # apiinfo()
+        # userlogin()
+        # get_hosts_info()
+        # get_host_group()
+        # get_tmplate()
+        # crate_host(host,ipaddr)
+        # del_host()

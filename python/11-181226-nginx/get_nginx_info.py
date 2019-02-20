@@ -35,7 +35,7 @@ for root, dirs, files in os.walk(confPath):  # 取出nginx配置文件
                     resolverSucc.append(url)  # 将能解析的域名添加到resolverSucc
                     with open("/home/zhangyiling/resolverSucc.txt", "w") as f:
                       json.dump(resolverSucc, f)
-                except Exception,e:
+                except Exception, e:
                    print("\033[1;31mCan't resolve domain name:\033[0m %s" % url)
                    resolverFail.append(url)  # 将不能解析的域名添加到resolverFail
                    with open("/home/zhangyiling/resolverFaild.txt", "w") as f:
