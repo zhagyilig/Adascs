@@ -1,6 +1,0 @@
-lsg-service-18	10.21.7.32
-lsg-service-19	10.21.8.163
-lsg-service-18	10.21.7.32
-lsg-service-16	10.21.8.86
-lsg-service-17	10.21.7.144
-lsg-service-19	10.21.8.163
