@@ -1,0 +1,21 @@
+{  
+    "DryRun": false,   
+    "ImageId": "ami-0a27b4f3bf91ccb0f",   
+    "KeyName": "yiling",
+    "DisableApiTermination": true,   
+    "InstanceInitiatedShutdownBehavior": "stop",   
+    "EbsOptimized": false,
+    "Monitoring": {  
+        "Enabled": false
+    },  
+
+    "SecurityGroupIds": [  
+        "sg-09fdaaaca4df046ce"  
+    ],  
+    "InstanceType": "m5.xlarge",
+    "Placement": {  
+        "AvailabilityZone": "ap-southeast-1b",
+        "Tenancy": "default"  
+    },   
+    "SubnetId": "subnet-0cf33b17db103ae35"
+}
