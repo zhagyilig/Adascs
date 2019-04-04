@@ -5,6 +5,7 @@ import os
 import time
 
 # 加载配置文件,获取 gitlab api 认证
+conf_info = '/Users/mac/.config/py_conf/conf'
 try:
     with open(conf_info, 'r') as f:
         results = json.load(f)

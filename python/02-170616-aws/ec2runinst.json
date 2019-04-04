@@ -1,146 +1,21 @@
-{
-    "BlockDeviceMappings": [
-        {
-            "DeviceName": "",
-            "VirtualName": "",
-            "Ebs": {
-                "DeleteOnTermination": true,
-                "Iops": 0,
-                "SnapshotId": "",
-                "VolumeSize": 60,
-                "VolumeType": "gp2",
-                "Encrypted": true,
-                "KmsKeyId": ""
-            },
-            "NoDevice": ""
-        }
-    ],
-    "ImageId": "ami-0c32c291509923687",
-    "InstanceType": "p2.16xlarge",
-    "Ipv6AddressCount": 0,
-    "Ipv6Addresses": [
-        {
-            "Ipv6Address": ""
-        }
-    ],
-    "KernelId": "",
-    "KeyName": "",
-    "MaxCount": 0,
-    "MinCount": 0,
-    "Monitoring": {
-        "Enabled": true
-    },
-    "Placement": {
-        "AvailabilityZone": "",
-        "Affinity": "",
-        "GroupName": "",
-        "PartitionNumber": 0,
-        "HostId": "",
-        "Tenancy": "dedicated",
-        "SpreadDomain": ""
-    },
-    "RamdiskId": "",
-    "SecurityGroupIds": [
-        ""
-    ],
-    "SecurityGroups": [
-        ""
-    ],
-    "SubnetId": "",
-    "UserData": "",
-    "AdditionalInfo": "",
-    "ClientToken": "",
-    "DisableApiTermination": true,
-    "DryRun": true,
-    "EbsOptimized": true,
-    "IamInstanceProfile": {
-        "Arn": "",
-        "Name": ""
-    },
-    "InstanceInitiatedShutdownBehavior": "terminate",
-    "NetworkInterfaces": [
-        {
-            "AssociatePublicIpAddress": true,
-            "DeleteOnTermination": true,
-            "Description": "",
-            "DeviceIndex": 0,
-            "Groups": [
-                ""
-            ],
-            "Ipv6AddressCount": 0,
-            "Ipv6Addresses": [
-                {
-                    "Ipv6Address": ""
-                }
-            ],
-            "NetworkInterfaceId": "",
-            "PrivateIpAddress": "",
-            "PrivateIpAddresses": [
-                {
-                    "Primary": true,
-                    "PrivateIpAddress": ""
-                }
-            ],
-            "SecondaryPrivateIpAddressCount": 0,
-            "SubnetId": ""
-        }
-    ],
-    "PrivateIpAddress": "",
-    "ElasticGpuSpecification": [
-        {
-            "Type": ""
-        }
-    ],
-    "ElasticInferenceAccelerators": [
-        {
-            "Type": ""
-        }
-    ],
-    "TagSpecifications": [
-        {
-            "ResourceType": "vpn-connection",
-            "Tags": [
-                {
-                    "Key": "",
-                    "Value": ""
-                }
-            ]
-        }
-    ],
-    "LaunchTemplate": {
-        "LaunchTemplateId": "",
-        "LaunchTemplateName": "",
-        "Version": ""
-    },
-    "InstanceMarketOptions": {
-        "MarketType": "spot",
-        "SpotOptions": {
-            "MaxPrice": "",
-            "SpotInstanceType": "one-time",
-            "BlockDurationMinutes": 0,
-            "ValidUntil": "1970-01-01T00:00:00",
-            "InstanceInterruptionBehavior": "terminate"
-        }
-    },
-    "CreditSpecification": {
-        "CpuCredits": ""
-    },
-    "CpuOptions": {
-        "CoreCount": 0,
-        "ThreadsPerCore": 0
-    },
-    "CapacityReservationSpecification": {
-        "CapacityReservationPreference": "none",
-        "CapacityReservationTarget": {
-            "CapacityReservationId": ""
-        }
-    },
-    "HibernationOptions": {
-        "Configured": true
-    },
-    "LicenseSpecifications": [
-        {
-            "LicenseConfigurationArn": ""
-        }
-    ]
+{  
+    "DryRun": false,   
+    "ImageId": "ami-05858fc1f88427da3",   
+    "KeyName": "yiling",
+    "DisableApiTermination": true,   
+    "InstanceInitiatedShutdownBehavior": "stop",   
+    "EbsOptimized": false,
+    "Monitoring": {  
+        "Enabled": false
+    },  
+
+    "SecurityGroupIds": [  
+        "sg-09fdaaaca4df046ce"  
+    ],  
+    "InstanceType": "m5.large",   
+    "Placement": {  
+        "AvailabilityZone": "ap-southeast-1b",   
+        "Tenancy": "default"  
+    },   
+    "SubnetId": "subnet-0cf33b17db103ae35"
 }

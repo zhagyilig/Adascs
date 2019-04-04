@@ -50,12 +50,15 @@ for zone in conn.list_hosted_zones():
     'nameservers', 'record_sets', 'resource_record_set_count']
     """
     # print(help(zone))
+    
     if zone.name == name_to_match:
-        zone.create_a_record(
+        print(zone.nae)
+        new_record, change_info = zone.create_a_record(
             # Notice that this is a full-qualified name.
-            name='test-ezbuy.me.',
-            values=['192.168.88.8'],
+            name='lsg-redis-db-1.ezbuy.me.',
+            values=['10.21.7.235'],
         )
+        print(new_record, change_info)
 
 # Or maybe we want a weighted round-robin set.
 # wrr_record1, change_info = zone.create_a_record(

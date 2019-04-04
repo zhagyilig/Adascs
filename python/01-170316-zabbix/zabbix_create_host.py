@@ -35,8 +35,6 @@ def apiinfo():
     }
 
     r = requests.get(url, headers=headers, data=json.dumps(data))
-    # print(r.status_code)  # 200
-    # print(r.content)
     print(r.json())
 
 
@@ -98,7 +96,7 @@ def crate_host(host, ip):
             ],
             "templates": [
                 {
-                    "templateid": "10001",
+                    "templateid": "10001",  # Linux OS
                 }
             ],
             # "macros": [
