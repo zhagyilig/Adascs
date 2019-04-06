@@ -67,28 +67,3 @@ if __name__== "__main__":
 	st=checkMySQL()
 	sys.exit(st)
 
-#### keepalived.conf
-! Configuration File for keepalived v1.1.19
-
-vrrp_script vs_mysql_137 {
-   script "/etc/keepalived/checkMySQL.py -h 192.168.21.137 -P 3306"
-   interval 60
-}
-
-vrrp_instance haproxy_ha {
-    state MASTER
-    interface eth0
-    virtual_router_id 55
-    priority 150
-    advert_int 10
-    authentication {
-        auth_type PASS
-        auth_pass 1111
-    }
-    track_script {
-        vs_mysql_137
-    }
-    virtual_ipaddress {
-        192.168.21.55/24
-    }
-}
