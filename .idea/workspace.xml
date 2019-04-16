@@ -2,20 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e2f47dc2-8e6e-48b6-bb78-88c807cf6004" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/python/01-170316-zabbix/elastizabbix" beforeDir="false" afterPath="$PROJECT_DIR$/python/01-170316-zabbix/elastizabbix" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/python/01-170316-zabbix/elastizabbix/agent/elastizabbix" beforeDir="false" afterPath="$PROJECT_DIR$/python/01-170316-zabbix/elastizabbix/agent/elastizabbix" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/python/01-170316-zabbix/elastizabbix/agent/elastizabbix.conf" beforeDir="false" afterPath="$PROJECT_DIR$/python/01-170316-zabbix/elastizabbix/agent/elastizabbix.conf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/15-190314-consul/consul_start.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/python/15-190314-consul/consul_start.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/backup_jenkins.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/jenkins_backup.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/check_mysql.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/check_mysql.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/it_chat.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/nginx.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/python面试题.md" beforeDir="false" afterPath="$PROJECT_DIR$/python/16-190406-pythonms/python面试题.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/untitled.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/乘法口诀.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/16-190406-pythonms/乘法口诀.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/连接MySQL.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,55 +22,39 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/study/day04/函数之参数.py">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/study/day04/函数排序.py">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/study/day04/函数练习之阶乘1.py">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/study/day04/函数联系之阶乘2.py">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/study/day04/匿名函数.py">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/study/day06/pycharm_project_525/mem.py">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/terraform-learning/main.tf">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.vscode/settings.json">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/python/01-170316-zabbix/zabbix_monitor_port.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="340">
-                <caret line="13" column="115" selection-start-line="13" selection-start-column="115" selection-end-line="13" selection-end-column="115" />
-              </first_editor>
-              <second_editor />
+        <entry file="file://$PROJECT_DIR$/python/01-170316-zabbix/zabbix_report.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="28" column="12" selection-start-line="28" selection-start-column="12" selection-end-line="28" selection-end-column="12" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/study/day04/函数式编程.py">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="260">
+                <caret line="13" column="115" selection-start-line="13" selection-start-column="115" selection-end-line="13" selection-end-column="115" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -169,9 +144,8 @@
     <other-services-enabled>true</other-services-enabled>
     <auto-save>true</auto-save>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="x" value="705" />
-    <option name="y" value="40" />
+  <component name="ProjectFrameBounds" extendedState="1">
+    <option name="y" value="23" />
     <option name="width" value="1440" />
     <option name="height" value="826" />
   </component>
@@ -212,22 +186,12 @@
             <path>
               <item name="Adascs" type="b2602c69:ProjectViewProjectNode" />
               <item name="Adascs" type="462c0819:PsiDirectoryNode" />
-              <item name=".vscode" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Adascs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Adascs" type="462c0819:PsiDirectoryNode" />
               <item name="python" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Adascs" type="b2602c69:ProjectViewProjectNode" />
               <item name="Adascs" type="462c0819:PsiDirectoryNode" />
               <item name="shell" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Adascs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Adascs" type="462c0819:PsiDirectoryNode" />
-              <item name="study" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Adascs" type="b2602c69:ProjectViewProjectNode" />
@@ -333,19 +297,20 @@
       <workItem from="1553248722175" duration="1640000" />
       <workItem from="1553905647558" duration="8672000" />
       <workItem from="1554428490429" duration="7209000" />
-      <workItem from="1554548208092" duration="1888000" />
+      <workItem from="1554548208092" duration="2177000" />
+      <workItem from="1554686972514" duration="621000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29786000" />
+    <option name="totallyTimeSpent" value="30696000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <frame x="0" y="23" width="1440" height="826" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.19857143" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.20071429" />
       <window_info id="Structure" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Database Changes" order="0" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
@@ -374,9 +339,6 @@
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.log" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/python/EC2Pipeline/README.md" />
-    <entry file="file://$PROJECT_DIR$/python/EC2Pipeline/src/instance_tag.txt" />
-    <entry file="file://$PROJECT_DIR$/python/EC2Pipeline/src/instance_info.txt" />
     <entry file="file://$PROJECT_DIR$/python/EC2Pipeline/src/hostname.txt" />
     <entry file="file://$PROJECT_DIR$/python/EC2Pipeline/src/instance_info.sh" />
     <entry file="file://$PROJECT_DIR$/python/EC2Pipeline/src/change_ec2_type.sh" />
@@ -459,29 +421,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/python/it_chat.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/python/it_chat.py" />
     <entry file="file://$PROJECT_DIR$/python/innobackupex_backup.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1057" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/python/nginx.log">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/python/nginx.log" />
     <entry file="file://$PROJECT_DIR$/python/monitor_rabbitmq.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-477" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/python/untitled.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/python/untitled.txt" />
     <entry file="file://$PROJECT_DIR$/python/res.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -495,9 +447,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/python/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/python/__init__.py" />
     <entry file="file://$PROJECT_DIR$/python/16-190406-pythonms/python面试题.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -530,9 +480,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/python/连接MySQL.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/python/连接MySQL.py" />
     <entry file="file://$PROJECT_DIR$/python/访问日志分析.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-237" />
@@ -550,28 +498,14 @@
     <entry file="file://$PROJECT_DIR$/shell/mysql_status.sh">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/study/day04/函数之参数.py" />
+    <entry file="file://$PROJECT_DIR$/study/day04/函数式编程.py" />
+    <entry file="file://$PROJECT_DIR$/study/day04/函数排序.py" />
+    <entry file="file://$PROJECT_DIR$/study/day04/函数练习之阶乘1.py" />
+    <entry file="file://$PROJECT_DIR$/study/day04/函数联系之阶乘2.py" />
+    <entry file="file://$PROJECT_DIR$/study/day04/匿名函数.py" />
+    <entry file="file://$PROJECT_DIR$/study/day06/pycharm_project_525/mem.py" />
     <entry file="file://$PROJECT_DIR$/shell/mysql_qps.sh">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/study/day04/函数之参数.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/study/day04/函数式编程.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/study/day04/函数排序.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/study/day04/函数练习之阶乘1.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/study/day04/函数联系之阶乘2.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/study/day04/匿名函数.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/study/day06/pycharm_project_525/mem.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/terraform-learning/main.tf">
@@ -580,10 +514,23 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="340">
+          <first_editor relative-caret-position="260">
             <caret line="13" column="115" selection-start-line="13" selection-start-column="115" selection-end-line="13" selection-end-column="115" />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.vscode/settings.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python/01-170316-zabbix/zabbix_monitor_port.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python/01-170316-zabbix/zabbix_report.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="28" column="12" selection-start-line="28" selection-start-column="12" selection-end-line="28" selection-end-column="12" />
         </state>
       </provider>
     </entry>

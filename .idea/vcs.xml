@@ -3,5 +3,6 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/python/01-170316-zabbix/elastizabbix" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vue/my-app" vcs="Git" />
   </component>
 </project>
