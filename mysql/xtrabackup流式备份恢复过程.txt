@@ -22,6 +22,13 @@ innobackupex --defaults-file=$cnf --user=sstuser --password='xxxx' --host=localh
 /bin/find /var/lib/mysql/db_backup/backup_eye  -type f -mtime +5 -delete
 
 # 压缩备份方式:
+
+需要有： 
+sh: qpress: command not found
+
+http://www.quicklz.com/  下载qpress命令
+
+
 xbstream:
 	cd /var/lib/mysql/db_backup
 	mkdir backup_eye_recovery
